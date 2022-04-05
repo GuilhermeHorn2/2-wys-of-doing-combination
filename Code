@@ -1,0 +1,29 @@
+
+int fatorial(int n){
+    if(n == 0){
+        return 1;
+    }
+    return n*fatorial(n-1);
+}
+
+int comb(int n,int k){
+    if(n == 1){
+        return n;
+    }
+    if(k == 0 || n == k){
+        return 1;
+    }
+
+    return fatorial(n)/((fatorial(n-k))*fatorial(k));
+}
+
+int combb(int n,int k){
+    //find all possibles "worst" cases f(n,0);f(n,n);f(n,1) 
+    if(n == 1){
+        return n;
+    }
+    if(k == 0 || n == k){
+        return 1;
+    }
+    return combb(n-1,k) + comb(n-1,k-1);//f(n,k) = f(n-1,k) + f(n-1,k-1)
+}

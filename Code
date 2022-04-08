@@ -18,7 +18,7 @@ int comb(int n,int k){
 }
 
 int combb(int n,int k){
-    //find all possibles "worst" cases f(n,0);f(n,n);f(n,1) 
+    //find all possibles "worst"/base cases f(n,0);f(n,n);f(n,1) 
     if(n == 1){
         return n;
     }
